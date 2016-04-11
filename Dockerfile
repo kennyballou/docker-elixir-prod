@@ -22,8 +22,12 @@ RUN apk update && apk add \
     postgresql-client \
     erlang-asn1 \
     erlang-crypto \
+    erlang-dev \
     erlang-hipe \
+    erlang-inets \
+    erlang-kernel \
     erlang-mnesia \
+    erlang-public-key \
     erlang-runtime-tools \
     erlang-sasl \
     erlang-ssl \
@@ -36,3 +40,8 @@ RUN set -x \
     && mkdir /opt/elixir \
     && unzip /tmp/elixir.zip -d /opt/elixir \
     && rm -f /tmp/elixir.zip
+
+RUN set -x \
+    && mix local.hex --force \
+    && mix hex.info \
+    && mix local.rebar
