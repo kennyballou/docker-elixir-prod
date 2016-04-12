@@ -6,6 +6,7 @@ ENV LANG="en_US.UTF-8"
 ENV ELIXIR_VER=1.2.4
 ENV ELIXIR_URL=https://github.com/elixir-lang/elixir/releases/download/v$ELIXIR_VER/Precompiled.zip
 ENV MIX_ENV=prod
+ENV PATH /opt/elixir/bin:$PATH
 
 WORKDIR /opt/
 
